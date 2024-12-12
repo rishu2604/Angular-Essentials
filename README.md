@@ -22,10 +22,17 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-##
+## How to import image
 
 - Here the path of the assets folder is not correct/relative but we are still able to see that picture because of assets configuration in angular.json file
   <br>
   `"assets": ["src/favicon.ico", "src/assets"],`
   <br>
   `<img src="assets/task-management-logo.png" alt="A todo List" />`
+  <br>
+
+## Creating components through Angular CLI
+
+`ng generate component <component_name>`
+<br>
+`ng g c <component_name>`
