@@ -76,3 +76,22 @@ By adding attr in front of the attribute name you want to bind dynamically, you'
 
 - It automatically listens to all possible user events that could occur on a website, as well as some other possible events that could occur, like a timer expiring or anything like that.
 - And when such an event occurs, it checks the Angular application for possible changes.
+
+## Signal
+
+A signal is an object that stores a value (any type of value, including nested objects)
+
+## @Input()
+
+It is a decorator
+
+## input
+
+- It is a generic function.
+- It is a read only signal and we cannot change its value.
+
+## $event
+
+- You can get hold of emitted values with help of a special variable that's provided by Angular: the `$event` variable.
+- That's a reserved name. It's a variable provided by Angular in its templates or specifically in the parts where you handle events in your templates.
+- It is available with both the built-in and the custom events.

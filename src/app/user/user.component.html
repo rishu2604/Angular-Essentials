@@ -2,9 +2,10 @@
   <!-- Syntax to add event listeners to the elements -->
   <button (click)="onSelectUser()">
     <!-- This is known as property binding -->
-    <img [src]="ImagePath()" [alt]="selectedUser().name" />
+    <img [src]="ImagePath" [alt]="name" />
     <!-- This is string interpolation -->
-    <span>{{ selectedUser().name }}</span>
+    <span>{{ name }}</span>
     <!-- It executes the signal's read function and then gives the value stored in it -->
+    <!-- We also have to use paranthesis to read/access signal's value -->
   </button>
 </div>
