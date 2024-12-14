@@ -6,6 +6,7 @@ import {
   input,
   Output,
   EventEmitter,
+  output,
 } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
 
@@ -21,7 +22,9 @@ export class UserComponent {
   @Input({ required: true }) id!: string;
   @Input({ required: true }) avatar!: string; // Exclamation sign tells TS that this avatar variable will definitely have a value
   @Input({ required: true }) name!: string;
-  @Output() select = new EventEmitter();
+  @Output() select = new EventEmitter<string>();
+
+  // select = output<string>();
 
   // @Input() // It is a decorator
   // input // is a generic function
