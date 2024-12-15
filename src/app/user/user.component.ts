@@ -10,7 +10,13 @@ import {
 } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
 
-const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+// const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+
+type User = {
+  id: string;
+  name: string;
+  avatar: string;
+};
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -19,9 +25,11 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-  @Input({ required: true }) id!: string;
-  @Input({ required: true }) avatar!: string; // Exclamation sign tells TS that this avatar variable will definitely have a value
-  @Input({ required: true }) name!: string;
+  // @Input({ required: true }) id!: string;
+  // @Input({ required: true }) avatar!: string; // Exclamation sign tells TS that this avatar variable will definitely have a value
+  // @Input({ required: true }) name!: string;
+
+  @Input({ required: true }) user!: User;
   @Output() select = new EventEmitter<string>();
 
   // select = output<string>();
@@ -37,7 +45,7 @@ export class UserComponent {
   // });
 
   get ImagePath() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user.avatar;
   }
 
   // selectedUser = DUMMY_USERS[randomIndex];
@@ -56,6 +64,6 @@ export class UserComponent {
     // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
     // this.selectedUser.set(DUMMY_USERS[randomIndex]);
     // this.selectedUser = DUMMY_USERS[randomIndex];
-    this.select.emit(this.id);
+    this.select.emit(this.user.id);
   }
 }
