@@ -1,6 +1,7 @@
 <div>
   <!-- Syntax to add event listeners to the elements -->
-  <button (click)="onSelectUser()">
+  <!-- Dynamically binding css to the active class -->
+  <button (click)="onSelectUser()" [class.active]="selected">
     <!-- This is known as property binding -->
     <img [src]="ImagePath" [alt]="user.name" />
     <!-- This is string interpolation -->
